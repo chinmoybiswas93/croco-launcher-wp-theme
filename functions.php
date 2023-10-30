@@ -48,3 +48,43 @@ function register_footer_sidebar()
     ));
 }
 add_action('widgets_init', 'register_footer_sidebar');
+
+
+// Display author information after the page content
+function display_author_info()
+{
+    global $post;
+    $author_id = $post->post_author;
+    $author_data = get_userdata($author_id);
+
+    echo '<div class="container">';
+    echo '<hr>';
+    echo '<div class="author-info">';
+
+    echo '<div class="author-info-left">';
+    // Display author image
+    echo get_avatar($author_id, 120);
+    // Display social icons (replace with your own social links)
+    echo '<ul class="social-icons">';
+    echo '<li><a href="#"><img src="' . esc_url(get_template_directory_uri() . '/resources/icons/author-social.png') . '" alt="Social Icon"></a></li>';
+    echo '</ul>';
+    echo '</div>';
+
+    echo '<div class="author-info-right">';
+    echo '<p class="author-name">' . $author_data->display_name . '</p>';
+    echo '<p>' . get_the_author_meta('description', $author_id) . '</p>';
+    echo '</div>';
+
+    echo '</div>';
+    echo '</div>';
+}
+add_action('custom_page_content', 'display_author_info');
+
+
+
+// Add a custom hook after the page content
+function custom_page_content_hook()
+{
+    do_action('custom_page_content');
+}
+add_action('custom_page_content_hook', 'custom_page_content_hook');

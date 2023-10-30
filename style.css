@@ -277,3 +277,37 @@ span.yellow {
 .home-content p {
   padding-bottom: 20px;
 }
+
+/* author box */
+.author-info {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 40px;
+  max-width: 600px;
+  background-color: rgb(220, 220, 220);
+  margin-bottom: 100px;
+}
+
+.author-info-left {
+  flex-basis: 22%;
+}
+.author-info-right {
+  flex-basis: 78%;
+}
+
+.author-info-right .author-name {
+  font-size: 20px;
+  font-weight: 600;
+}
+.author-info-left img {
+  width: 100%;
+  max-width: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.author-info-left .social-icons img {
+  margin-top: 10px;
+  border-radius: 0;
+}
