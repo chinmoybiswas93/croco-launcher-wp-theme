@@ -50,6 +50,15 @@ h1 {
   font-weight: 700;
 }
 
+h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+h2 .first-word {
+  color: var(--primary-yellow);
+}
+
 .container {
   max-width: 1200px;
   margin: auto;
@@ -255,4 +264,16 @@ span.yellow {
 .owl-carousel .owl-nav button.owl-prev,
 .owl-carousel button.owl-dot.active {
   background: white !important;
+}
+
+.home-content {
+  padding: 100px;
+}
+
+.home-content .page-content {
+  margin-top: 20px;
+}
+
+.home-content p {
+  padding-bottom: 20px;
 }
